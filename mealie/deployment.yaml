@@ -6,7 +6,7 @@ metadata:
   name: mealie
   namespace: mealie
 spec:
-  replicas: 2
+  replicas: 6
   selector:
     matchLabels:
       app: mealie
@@ -20,3 +20,7 @@ spec:
           name: nginx
           ports:
             - containerPort: 9000
+  strategy:
+     type: RollingUpdate
+     rollingUpdate:
+       maxUnavailable: 2

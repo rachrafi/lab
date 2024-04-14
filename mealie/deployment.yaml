@@ -21,4 +21,6 @@ spec:
           ports:
             - containerPort: 9000
   strategy:
-     type: Recreate
+     type: RollingUpdate
+     rollingUpdate:
+       maxUnavailable: 2
